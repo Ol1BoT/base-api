@@ -1,0 +1,17 @@
+server:
+  address: "127.0.0.1"
+  port: 3000
+  timeout: 15
+
+db:
+  host:
+  port:
+  db_name:
+  user:
+  password:
+  ssl_mode:
+
+google:
+  client_id: #GOGOLE_CLIENT_ID.apps.googleusercontent.com
+  secret: #SECRET
+  redirect_uri: http://localhost:3000/oauth/google/callback
