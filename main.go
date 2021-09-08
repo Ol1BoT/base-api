@@ -5,18 +5,23 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/ol1bot/base-api/routes"
 )
 
 func main() {
 
-	r := mux.NewRouter()
+	r := mux.NewRouter().StrictSlash(false)
 
-	apiRoute := r.PathPrefix("/v1/api").Subrouter()
+	authRouter := r.PathPrefix("/oauth").Subrouter()
+	routes.AuthHander(authRouter)
+	
+	
+	
+	
+	apiRouter := r.PathPrefix("/v1/api").Subrouter()
+	routes.ApiHander(apiRouter)
 
 
-	apiRoute.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(rw,"Testing API Route")
-	})
 
 	r.HandleFunc("/",func(rw http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(rw,"Server Root")

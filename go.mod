@@ -1,4 +1,4 @@
-module github.com/Ol1BoT/base-api
+module github.com/ol1bot/base-api
 
 go 1.16
 
