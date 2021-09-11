@@ -53,6 +53,9 @@ func GoogleCallback(w http.ResponseWriter, r *http.Request) {
 		log.Fatalln(err)
 	}
 
+	// TODO 
+	// store user token in database
+
 	client := conf.Client(oauth2.NoContext, token)
 	resp, err := client.Get("https://www.googleapis.com/oauth2/v2/userinfo?alt=json")
 	if err != nil {
@@ -77,5 +80,10 @@ func GoogleCallback(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Write(bt)
+
+	// TODO
+	// compare email to that in DB, grab permissions, info etc.
+	// turn into JWT
+	// return our token w/e information back to user
 }
 

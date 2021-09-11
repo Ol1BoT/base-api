@@ -14,4 +14,11 @@ func ApiHander(r *mux.Router) {
 		fmt.Fprintf(rw,"API Route")
 	})
 
+	// r.HandleFunc("/portal/", func(rw http.ResponseWriter, r *http.Request) {})
+	// r.HandleFunc("/students/", func(rw http.ResponseWriter, r *http.Request) {})
+	// r.HandleFunc("/student_years/:year", func(rw http.ResponseWriter, r *http.Request) {})
+	// r.HandleFunc("/staff", func(rw http.ResponseWriter, r *http.Request) {})
+	// r.HandleFunc("/payees", func(rw http.ResponseWriter, r *http.Request) {})
+
+
 }
